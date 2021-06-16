@@ -26,8 +26,8 @@ module.exports = (io) => {
 };
 
 const getCoords = async () => {
-  const url = "http://34.66.55.146:5000/bus/getDataAllLastCoordsUnitsByUser";
-  console.log(url);
+  const url = `${process.env.URL_COORDS}/bus/getDataAllLastCoordsUnitsByUser`;
+  
   const response = await fetch(url, {
     method: 'POST',
     mode: 'cors',
