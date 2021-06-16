@@ -7,7 +7,11 @@ const {application} = require("./config/properties");
 
 const app = express();
 const server = http.Server(app);
-const io = socketIO(server);
+const io = socketIO(server, {
+    cors: {
+        origin: '*'
+    }
+});
 
 //VARIABLES DE ENTORNO
 require("dotenv").config();
