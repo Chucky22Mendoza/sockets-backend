@@ -5,13 +5,15 @@ module.exports = (io) => {
     let initCoords = await getCoords();
     
     console.log("New client connected");
-
-    socket.emit("message", "Hola mundo");
     
     socket.emit("initCoords", initCoords);
 
     socket.on("disconnect", () => {
       console.log("Client disconnected");
+    });
+
+    socket.on("receiveCoords", (data) => {
+      console.log(data);
     });
 
     /*
