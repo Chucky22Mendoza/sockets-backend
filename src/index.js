@@ -38,7 +38,7 @@ app.get("/app", (req, res) => {
 });
 
 // settings
-app.set("port", process.env.PORT || 3005);
+app.set("port", process.env.PORT || 6000);
 
 // sockets
 require('./sockets')(io);
